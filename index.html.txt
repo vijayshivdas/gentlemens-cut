@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gentlemen's Cut — Premium Barbershop</title>
+<meta name="description" content="Premium barbering, grooming and beard styling. Book your next appointment at The Gentlemen's Cut.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0a; --panel:#131311; --panel2:#181816; --cream:#f2eadb;
+  --muted:#a8a297; --gold:#c8a96b; --line:rgba(242,234,219,.12);
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.container{width:min(calc(100% - 48px),var(--max));margin:auto}
+.nav{position:absolute;z-index:5;top:0;left:0;width:100%;border-bottom:1px solid rgba(255,255,255,.1)}
+.nav-inner{height:86px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:"Playfair Display",serif;font-size:24px;letter-spacing:.08em}
+.logo span{color:var(--gold)}
+.links{display:flex;gap:32px;font-size:13px;color:#d5cfc2}
+.links a{transition:.25s}.links a:hover{color:var(--gold)}
+.nav-btn,.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--gold);padding:13px 20px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.25s}
+.nav-btn{color:var(--gold)}.nav-btn:hover,.btn:hover{background:var(--gold);color:#111}
+.menu{display:none;background:none;border:0;color:var(--cream);font-size:25px}
+.hero{min-height:760px;position:relative;display:flex;align-items:center;overflow:hidden;background:
+linear-gradient(90deg,rgba(5,5,4,.92) 0%,rgba(5,5,4,.72) 42%,rgba(5,5,4,.25) 100%),
+url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:180px;background:linear-gradient(transparent,var(--bg))}
+.hero-content{position:relative;z-index:1;max-width:700px;padding-top:75px}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:700;margin-bottom:22px}
+h1{font-family:"Playfair Display",serif;font-size:clamp(60px,8vw,108px);line-height:.9;letter-spacing:-.04em;font-weight:600}
+h1 em{font-weight:500;color:var(--gold)}
+.hero p{max-width:500px;color:#c2bbb0;margin:28px 0 34px;font-size:16px}
+.btn{background:var(--gold);color:#111;padding:16px 24px}
+.btn.ghost{background:transparent;color:var(--cream);border-color:rgba(242,234,219,.35);margin-left:10px}
+.btn.ghost:hover{background:var(--cream);color:#111}
+.stats{display:flex;gap:45px;margin-top:50px}
+.stat strong{font-family:"Playfair Display";font-size:28px}.stat span{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.section{padding:110px 0}.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:48px}
+.kicker{font-size:11px;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+h2{font-family:"Playfair Display";font-size:clamp(40px,5vw,62px);line-height:1.02;font-weight:600}
+.section-head p{max-width:390px;color:var(--muted);font-size:14px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.service{background:var(--bg);padding:30px;min-height:260px;position:relative;transition:.3s}
+.service:hover{background:var(--panel)}
+.num{font-size:11px;color:var(--gold);letter-spacing:.12em}.service h3{font-family:"Playfair Display";font-size:25px;margin-top:75px}.service p{font-size:13px;color:var(--muted);margin-top:8px}.price{position:absolute;right:28px;top:28px;color:var(--gold);font-size:13px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.story-image{height:620px;position:relative}.story-image:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);opacity:.35}
+.story-image img{position:relative}
+.story-copy p{color:var(--muted);font-size:15px;margin:24px 0}.checks{display:grid;gap:13px;margin:30px 0;color:#d8d1c5;font-size:13px}.checks span:before{content:"✓";color:var(--gold);margin-right:12px}
+.gallery{display:grid;grid-template-columns:1.15fr .85fr .85fr;grid-template-rows:300px 300px;gap:10px}
+.gallery .tall{grid-row:span 2}.gallery .wide{grid-column:span 2}
+.gallery div{overflow:hidden}.gallery img{transition:.6s}.gallery div:hover img{transform:scale(1.05)}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price-card{background:var(--panel);padding:34px;border:1px solid var(--line)}.price-card.featured{border-color:var(--gold);transform:translateY(-8px)}
+.price-card h3{font-family:"Playfair Display";font-size:28px}.price-card .amount{font-family:"Playfair Display";font-size:42px;color:var(--gold);margin:20px 0}.price-card ul{list-style:none;color:var(--muted);font-size:13px;display:grid;gap:12px;margin-bottom:28px}.price-card li:before{content:"—";color:var(--gold);margin-right:8px}
+.quote{background:var(--panel);padding:90px 10%;text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quote blockquote{font-family:"Playfair Display";font-size:clamp(28px,4vw,48px);line-height:1.2}.quote cite{display:block;color:var(--gold);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-top:25px}
+.booking{background:linear-gradient(90deg,rgba(11,11,10,.93),rgba(11,11,10,.7)),url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=2200&q=85") center/cover;padding:120px 0}
+.booking-inner{max-width:650px}.booking p{color:#c0b9ae;margin:22px 0 30px}
+footer{padding:50px 0 30px;border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;gap:40px}.footer-note{color:var(--muted);font-size:12px;margin-top:8px}.socials{display:flex;gap:20px;color:var(--muted);font-size:12px}.copyright{margin-top:45px;padding-top:20px;border-top:1px solid var(--line);color:#6f6b64;font-size:11px;display:flex;justify-content:space-between}
+@media(max-width:850px){
+ .links,.nav-btn{display:none}.menu{display:block}.hero{min-height:700px}.hero-content{padding-top:100px}
+ .services{grid-template-columns:1fr 1fr}.story{grid-template-columns:1fr;gap:45px}.story-image{height:500px}
+ .pricing{grid-template-columns:1fr}.price-card.featured{transform:none}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:250px 250px 250px}.gallery .tall{grid-row:span 1}.gallery .wide{grid-column:span 2}
+}
+@media(max-width:560px){
+ .container{width:min(calc(100% - 30px),var(--max))}.hero{min-height:650px}.hero p{font-size:14px}.stats{gap:22px}.stat strong{font-size:23px}
+ .section{padding:75px 0}.section-head{display:block}.section-head p{margin-top:18px}.services{grid-template-columns:1fr}.service{min-height:220px}
+ .story-image{height:400px}.gallery{grid-template-columns:1fr;grid-template-rows:repeat(4,260px)}.gallery .wide{grid-column:auto}
+ .btn{padding:14px 17px}.btn.ghost{margin-left:4px}.footer-grid{display:block}.socials{margin-top:25px}.copyright{display:block}.copyright span{display:block;margin-top:8px}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#">THE <span>GENTLEMEN'S</span> CUT</a>
+    <nav class="links">
+      <a href="#services">Services</a><a href="#about">About</a><a href="#work">Our Work</a><a href="#pricing">Pricing</a>
+    </nav>
+    <a class="nav-btn" href="#booking">Book Now</a>
+    <button class="menu" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container">
+  <div class="hero-content">
+   <div class="eyebrow">Est. 2012 · Premium Grooming Studio</div>
+   <h1>Sharp cuts.<br><em>Sharper</em> confidence.</h1>
+   <p>A modern barbershop for men who care about the details. Precision cuts, timeless fades and expert beard work in a refined atmosphere.</p>
+   <div><a class="btn" href="#booking">Book an appointment ↗</a><a class="btn ghost" href="#services">Explore services</a></div>
+   <div class="stats"><div class="stat"><strong>12+</strong><span>Years experience</span></div><div class="stat"><strong>8k+</strong><span>Happy clients</span></div><div class="stat"><strong>4.9</strong><span>Average rating</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="services">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">What we do</div><h2>Built around<br>your style.</h2></div><p>From classic cuts to contemporary fades, every service is finished with precision and attention to detail.</p></div>
+  <div class="services">
+   <article class="service"><span class="num">01</span><span class="price">₹499</span><h3>Classic Cut</h3><p>Scissor work, clipper finish & styling.</p></article>
+   <article class="service"><span class="num">02</span><span class="price">₹699</span><h3>Signature Fade</h3><p>Skin, low, mid or high fade tailored to you.</p></article>
+   <article class="service"><span class="num">03</span><span class="price">₹399</span><h3>Beard Sculpt</h3><p>Shape, line-up, hot towel & finish.</p></article>
+   <article class="service"><span class="num">04</span><span class="price">₹999</span><h3>The Full Works</h3><p>Haircut, beard, hot towel & premium styling.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container story">
+  <div class="story-image"><img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1200&q=85" alt="Barber working"></div>
+  <div class="story-copy"><div class="kicker">The barbershop</div><h2>Craft is in<br>the details.</h2><p>We believe a great haircut is more than a service. It is a ritual — a moment to slow down, reset and leave feeling like your best self.</p><p>Our barbers combine traditional techniques with modern styling to create a look that works for you, not just the trend.</p><div class="checks"><span>Experienced professional barbers</span><span>Premium grooming products</span><span>Relaxed, private atmosphere</span></div><a class="btn ghost" href="#booking">Meet the team</a></div>
+ </div>
+</section>
+
+<section class="section" id="work">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">The portfolio</div><h2>Fresh from<br>the chair.</h2></div><p>A selection of our recent cuts, fades and grooming work.</p></div>
+  <div class="gallery">
+   <div class="tall"><img src="https://images.unsplash.com/photo-1622288432450-277d0fef5ed7?auto=format&fit=crop&w=1000&q=85" alt="Modern haircut"></div>
+   <div><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85" alt="Barber tools"></div>
+   <div><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85" alt="Barbershop"></div>
+   <div class="wide"><img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1600&q=85" alt="Grooming"></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="pricing">
+ <div class="container">
+  <div class="section-head"><div><div class="kicker">Simple pricing</div><h2>Choose your<br>ritual.</h2></div><p>No hidden costs. Just quality grooming, clear pricing and time reserved for you.</p></div>
+  <div class="pricing">
+   <article class="price-card"><div class="kicker">Essential</div><h3>Clean Cut</h3><div class="amount">₹499</div><ul><li>Consultation</li><li>Precision haircut</li><li>Wash & styling</li></ul><a class="btn ghost" href="#booking">Book service</a></article>
+   <article class="price-card featured"><div class="kicker">Most popular</div><h3>Signature</h3><div class="amount">₹799</div><ul><li>Signature fade</li><li>Beard sculpt</li><li>Hot towel finish</li></ul><a class="btn" href="#booking">Book service</a></article>
+   <article class="price-card"><div class="kicker">Premium</div><h3>Full Ritual</h3><div class="amount">₹1,299</div><ul><li>Haircut & beard</li><li>Hot towel treatment</li><li>Premium styling</li></ul><a class="btn ghost" href="#booking">Book service</a></article>
+  </div>
+ </div>
+</section>
+
+<section class="quote"><div class="container"><blockquote>“A great haircut doesn't change who you are. It reveals it.”</blockquote><cite>— The Gentlemen's Cut</cite></div></section>
+
+<section class="booking" id="booking">
+ <div class="container"><div class="booking-inner"><div class="kicker">Ready when you are</div><h2>Reserve your chair.</h2><p>Walk-ins are welcome, but appointments get priority. Choose your service and let us handle the rest.</p><a class="btn" href="https://wa.me/919999999999" target="_blank">Book on WhatsApp ↗</a></div></div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid"><div><div class="logo">THE <span>GENTLEMEN'S</span> CUT</div><div class="footer-note">Premium barbering · Grooming · Style</div></div><div class="socials"><a href="#">Instagram</a><a href="#">WhatsApp</a><a href="#">Google Maps</a></div></div>
+  <div class="copyright"><span>© 2026 The Gentlemen's Cut</span><span>Mon–Sun · 10:00 AM — 9:00 PM</span></div>
+ </div>
+</footer>
+<script>
+document.querySelector('.menu').addEventListener('click',()=> {
+ const nav=document.querySelector('.links');
+ nav.style.display=nav.style.display==='flex'?'none':'flex';
+ nav.style.position='absolute';nav.style.top='86px';nav.style.left='0';nav.style.right='0';
+ nav.style.background='#0b0b0a';nav.style.padding='25px';nav.style.flexDirection='column';
+});
+</script>
+</body>
+</html>
